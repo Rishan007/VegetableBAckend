@@ -16,9 +16,8 @@ router.post('/insert',function(req,res){
     {
     
         //password encription
-        const fname = req.body.fname
-        const lname = req.body.lname
-        const phone = req.body.phone
+        const name = req.body.name
+        const email = req.body.email
         const username = req.body.username
         const password = req.body.password
        
@@ -27,8 +26,7 @@ router.post('/insert',function(req,res){
     
             console.log(hash)
             
-            const datas = new User({FirstName:fname,Lastname:lname
-                ,Username:username,Password:hash,PhoneNumber:phone})
+            const datas = new User({Name:name,Username:username,Password:hash,Email:email})
                 datas.save().then(function(result){
                   console.log(datas._id)
                     res.status(201).json({status:true,data:datas})

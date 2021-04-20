@@ -3,14 +3,12 @@ const mongoose = require('mongoose')
 
 const User = mongoose.model('User',{
 
-FirstName:{
-    type:String
-},
-Lastname:{
+Name:{
     type:String
 },
 
-PhoneNumber:{
+
+Email:{
     type:String
 },
 
@@ -20,9 +18,9 @@ Username:{
 Password:{
     type:String
 },
-Profile:{
+UserType:{
     type:String,
-    default:"no-img.jpg"
+    default:"Customer"
 }
 
 
